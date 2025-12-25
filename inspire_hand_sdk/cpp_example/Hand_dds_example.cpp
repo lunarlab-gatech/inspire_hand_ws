@@ -92,23 +92,23 @@ int main(int argc, char **argv)
         rq=rq*1000;
         rq[3]=1000;
 
-        // # 将组合模式按二进制方式实现
-        // # mode 0：0000（无操作）
-        // # mode 1：0001（角度）
-        // # mode 2：0010（位置）
-        // # mode 3：0011（角度 + 位置）
-        // # mode 4：0100（力控）
-        // # mode 5：0101（角度 + 力控）
-        // # mode 6：0110（位置 + 力控）
-        // # mode 7：0111（角度 + 位置 + 力控）
-        // # mode 8：1000（速度）
-        // # mode 9：1001（角度 + 速度）
-        // # mode 10：1010（位置 + 速度）
-        // # mode 11：1011（角度 + 位置 + 速度）
-        // # mode 12：1100（力控 + 速度）
-        // # mode 13：1101（角度 + 力控 + 速度）
-        // # mode 14：1110（位置 + 力控 + 速度）
-        // # mode 15：1111（角度 + 位置 + 力控 + 速度）  
+        // # Implement the combination modes in binary format
+        // # mode 0: 0000 (No operation)
+        // # mode 1: 0001 (Angle)
+        // # mode 2: 0010 (Position)
+        // # mode 3: 0011 (Angle + Position)
+        // # mode 4: 0100 (Force control)
+        // # mode 5: 0101 (Angle + Force control)
+        // # mode 6: 0110 (Position + Force control)
+        // # mode 7: 0111 (Angle + Position + Force control)
+        // # mode 8: 1000 (Speed)
+        // # mode 9: 1001 (Angle + Speed)
+        // # mode 10: 1010 (Position + Speed)
+        // # mode 11: 1011 (Angle + Position + Speed)
+        // # mode 12: 1100 (Force control + Speed)
+        // # mode 13: 1101 (Angle + Force control + Speed)
+        // # mode 14: 1110 (Position + Force control + Speed)
+        // # mode 15: 1111 (Angle + Position + Force control + Speed)
         hand_cmd.angle_set().resize(6);
         hand_cmd.mode(0b0001);
         for (size_t i(0); i < 6; i++)
